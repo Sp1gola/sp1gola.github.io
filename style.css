@@ -3,40 +3,38 @@
     scroll-behavior: smooth;
 }
 
-:root{
-    --text-color: rgb(190, 232, 237);
+body {
+    background: #23238c;
+    background: linear-gradient(90deg, rgba(35, 35, 140, 1) 0%, rgba(107, 107, 232, 1) 50%, rgba(28, 135, 128, 1) 100%);
+    min-height: 170vh;
+}
+
+body::-webkit-scrollbar {
+  display: none; 
 }
 
 .home{
-    background: #23238c;
-    background: linear-gradient(90deg, rgba(35, 35, 140, 1) 0%, rgba(107, 107, 232, 1) 50%, rgba(28, 135, 128, 1) 100%);
     height: 100vh;
     max-width: 100vw;
-
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: "Playwrite GB J", cursive;
+    text-align: center;
+    color: rgb(190, 232, 237);
 }
 
 .welcome-container {
-    font-family: "Playwrite GB J", cursive;
-    color: var(--text-color);
-    text-align: center;
     max-width: 1000px;
     width: 90%;
     font-size: 70px;
     animation: containerFadeIn .5s ease-out forwards;
 }
 
-.desc{
+.name{
     animation: containerFadeIn .5s ease-out 0.3s forwards;
     opacity: 0;
-
-    color: var(--text-color);
-
-    font-family: "Playwrite GB J", cursive;
-    text-align: center;
     font-size: 40px;
 }
 
@@ -64,7 +62,7 @@
 
 .icons a,
 .icons a:visited {
-    color: var(--text-color);
+    color: rgb(190, 232, 237);
     text-decoration: none;
 }
 
@@ -95,4 +93,126 @@
 .ic5{
     animation: iconsFadeIn .5s ease-out 1s forwards;
     opacity: 0;
+}
+
+.music,
+.name,
+.desc, 
+.prg,
+.sport{
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.desc {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(100px); 
+    opacity: 0;
+}
+
+.music,
+.sport,
+.prg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(100px);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    gap: 40px;              
+    opacity: 0;
+}
+
+.ulprg {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 20px;               
+    list-style: none;            
+}
+
+.ulprg li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.ulprg img {
+    width: 50vh; 
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.music.show,
+.sport.show,
+.desc.show,
+.prg.show {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) translateY(0) !important;
+}
+
+.sportdesc{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 250px;               
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0; 
+}
+
+.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.music-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px; 
+    width: 100%;
+}
+
+.music-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+}
+
+.music-column h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgb(190, 232, 237);
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.music-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+}
+
+.music-column li {
+    font-size: 18px;
+    opacity: 0.9;
 }
