@@ -145,7 +145,7 @@ body::-webkit-scrollbar {
 }
 
 .ulprg img {
-    width: min(50vh, 80vw);  /* prende il valore più piccolo tra i due */
+    width: min(50vh, 80vw);
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -224,6 +224,7 @@ body::-webkit-scrollbar {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .love {
@@ -233,15 +234,15 @@ body::-webkit-scrollbar {
     transform: translate(-50%, -50%) translateY(100px);
 
     display: flex;
-    flex-direction: row; /* cambia da column a row */
+    flex-direction: row; 
     align-items: center;
     justify-content: center;
     gap: 40px;
     opacity: 0;
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
                 transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    max-width: 800px; /* allarga un po' per dare spazio a entrambi */
-    text-align: left; /* il testo allineato a sinistra sta meglio affianco */
+    max-width: 800px; 
+    text-align: left; 
 }
 
 .love .img{
@@ -252,7 +253,7 @@ body::-webkit-scrollbar {
     padding-top: 5px; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1050px) {
 
     .welcome-container {
         font-size: 36px;
@@ -271,7 +272,7 @@ body::-webkit-scrollbar {
     }
 
     .prg, .sport, .music {
-        width: 90vw;
+        width: 95vw;
         max-height: 90vh;
         overflow-y: auto;
         justify-content: flex-start;
@@ -280,7 +281,19 @@ body::-webkit-scrollbar {
         transform: translate(-50%, -50%) translateY(100px);
     }
 
-    .prg.show, .sport.show, .music.show {
+    .p {
+        transform: translate(10%, -50%) translateY(0) !important;
+    }
+
+    .s {
+        transform: translate(30%, -50%) translateY(0) !important;
+    }
+
+    .prg.show, .sport.show {
+        transform: translate(-55%, -50%) translateY(0) !important;
+    }
+
+    .music.show {
         transform: translate(-50%, -50%) translateY(0) !important;
     }
 
@@ -300,17 +313,12 @@ body::-webkit-scrollbar {
     }
 
     .music-container {
-        flex-direction: column;
         align-items: center;
         gap: 24px;
     }
 
-    .music-column {
-        width: 90vw;
-    }
-
     .love {
-        flex-direction: column; /* su mobile torna in colonna */
+        flex-direction: column;
         text-align: center;
     }
 
