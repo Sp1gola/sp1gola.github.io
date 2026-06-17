@@ -70,64 +70,36 @@ body::-webkit-scrollbar {
     font-size: 1.8rem;
 }
 
-.ic1{
-    animation: iconsFadeIn .5s ease-out 0.3s forwards;
-    opacity: 0; 
-}
+.ic1{ animation: iconsFadeIn .5s ease-out 0.3s forwards; opacity: 0; }
+.ic2{ animation: iconsFadeIn .5s ease-out 0.5s forwards; opacity: 0; }
+.ic3{ animation: iconsFadeIn .5s ease-out 0.7s forwards; opacity: 0; }
+.ic4{ animation: iconsFadeIn .5s ease-out 0.9s forwards; opacity: 0; }
+.ic5{ animation: iconsFadeIn .5s ease-out 1s forwards; opacity: 0; }
 
-.ic2{
-    animation: iconsFadeIn .5s ease-out 0.5s forwards;
-    opacity: 0;
-}
-
-.ic3{
-    animation: iconsFadeIn .5s ease-out 0.7s forwards;
-    opacity: 0;
-}
-
-.ic4{
-    animation: iconsFadeIn .5s ease-out 0.9s forwards;
-    opacity: 0;
-}
-
-.ic5{
-    animation: iconsFadeIn .5s ease-out 1s forwards;
-    opacity: 0;
-}
-
-.tv,
-.music,
-.name,
-.desc, 
-.prg,
-.sport{
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.desc {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateY(100px); 
-    opacity: 0;
-}
-
-.tv,
-.music,
-.sport,
-.prg {
+.section {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) translateY(100px);
-    
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prg,
+.sport,
+.music,
+.tv {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
     justify-content: center;
-    gap: 40px;              
-    opacity: 0;
+    gap: 40px;
+}
+
+.section.show {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) translateY(0) !important;
 }
 
 .ulprg {
@@ -153,32 +125,14 @@ body::-webkit-scrollbar {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.tv.show,
-.love.show,
-.music.show,
-.sport.show,
-.desc.show,
-.prg.show {
-    opacity: 1 !important;
-    transform: translate(-50%, -50%) translateY(0) !important;
-}
-
 .sportdesc{
     display: flex;
     justify-content: center; 
     align-items: center;
     gap: 250px;               
     list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 0;
     padding: 0; 
-}
-
-.show {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
 }
 
 .hidden {
@@ -226,39 +180,27 @@ body::-webkit-scrollbar {
     opacity: 0.9;
 }
 
-.desc .img{
+.img {
     width: min(50vh, 80vw);  
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     padding-top: 5px;
+}
+
+.desc .img {
     padding-bottom: 5px;
 }
 
 .love {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateY(100px);
-
     display: flex;
     flex-direction: row; 
     align-items: center;
     justify-content: center;
     gap: 40px;
     opacity: 0;
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     max-width: 800px; 
     text-align: left; 
-}
-
-.love .img{
-   width: min(50vh, 80vw);  
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    padding-top: 5px; 
 }
 
 @media (max-width: 1050px) {
@@ -279,7 +221,7 @@ body::-webkit-scrollbar {
         right: 16px;
     }
 
-    .prg, .sport, .music {
+    .prg, .sport, .music, .tv {
         width: 95vw;
         max-height: 90vh;
         overflow-y: auto;
@@ -301,7 +243,7 @@ body::-webkit-scrollbar {
         transform: translate(-55%, -50%) translateY(0) !important;
     }
 
-    .music.show {
+    .music.show, .tv.show {
         transform: translate(-50%, -50%) translateY(0) !important;
     }
 
@@ -316,11 +258,11 @@ body::-webkit-scrollbar {
     }
 
     .sportdesc {
-        flex-direction: column;
-        gap: 8px;
+        display: none;
     }
 
-    .music-container {
+    .music-container,
+    .tv-container {
         align-items: center;
         gap: 24px;
     }
@@ -328,9 +270,5 @@ body::-webkit-scrollbar {
     .love {
         flex-direction: column;
         text-align: center;
-    }
-
-    .sportdesc{
-        display: none;
     }
 }
