@@ -6,7 +6,7 @@
 body {
     background: #23238c;
     background: linear-gradient(90deg, rgba(35, 35, 140, 1) 0%, rgba(107, 107, 232, 1) 50%, rgba(28, 135, 128, 1) 100%);
-    min-height: 200vh;
+    min-height: 300vh;
 }
 
 body::-webkit-scrollbar {
@@ -95,6 +95,7 @@ body::-webkit-scrollbar {
     opacity: 0;
 }
 
+.tv,
 .music,
 .name,
 .desc, 
@@ -112,6 +113,7 @@ body::-webkit-scrollbar {
     opacity: 0;
 }
 
+.tv,
 .music,
 .sport,
 .prg {
@@ -151,6 +153,7 @@ body::-webkit-scrollbar {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+.tv.show,
 .love.show,
 .music.show,
 .sport.show,
@@ -182,6 +185,7 @@ body::-webkit-scrollbar {
     display: none !important;
 }
 
+.tv-container,
 .music-container {
     display: flex;
     justify-content: center;
@@ -189,6 +193,7 @@ body::-webkit-scrollbar {
     width: 100%;
 }
 
+.tv-column,
 .music-column {
     display: flex;
     flex-direction: column;
@@ -196,6 +201,7 @@ body::-webkit-scrollbar {
     width: 250px;
 }
 
+.tv-column h3,
 .music-column h3 {
     font-size: 22px;
     margin-bottom: 20px;
@@ -204,6 +210,7 @@ body::-webkit-scrollbar {
     width: 100%;
 }
 
+.tv-column ul,
 .music-column ul {
     list-style: none;
     padding: 0;
@@ -213,6 +220,7 @@ body::-webkit-scrollbar {
     gap: 12px; 
 }
 
+.tv-column li,
 .music-column li {
     font-size: 18px;
     opacity: 0.9;
