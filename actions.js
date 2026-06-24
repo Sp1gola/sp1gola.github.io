@@ -63,3 +63,51 @@ window.addEventListener("scroll", () => {
         love.classList.add("show");
     }
 });
+
+//api call
+
+const LASTFM_BACKEND_URL = 'https://project-gt3cb.vercel.app';
+const LASTFM_USERNAME = 'sp1gola'; 
+
+async function getTopStats(username) {
+  try {
+    const response = await fetch(`${LASTFM_BACKEND_URL}/api/top-stats?user=${username}`);
+    if (!response.ok) throw new Error('Errore nella risposta del backend');
+    return await response.json();
+  } catch (error) {
+    console.error('Errore nel recupero top stats Last.fm:', error);
+    return null;
+  }
+}
+
+function fillMusicLists(stats) {
+  const artistsList = document.querySelector('.favSi');
+  const albumsList = document.querySelector('.favAl');
+  const songsList = document.querySelector('.favSo');
+
+  artistsList.innerHTML = stats.artists.map((a) => `
+    <li><a href="${a.url}" target="_blank" rel="noopener">${a.name}</a></li>
+  `).join('');
+
+  albumsList.innerHTML = stats.albums.map((a) => `
+    <li><a href="${a.url}" target="_blank" rel="noopener">${a.name}</a> <span class="music-artist">– ${a.artist}</span></li>
+  `).join('');
+
+  songsList.innerHTML = stats.tracks.map((t) => `
+    <li><a href="${t.url}" target="_blank" rel="noopener">${t.name}</a> <span class="music-artist">– ${t.artist}</span></li>
+  `).join('');
+}
+
+async function initMusicSection() {
+  const stats = await getTopStats(LASTFM_USERNAME);
+
+  if (!stats) {
+    // Se la chiamata fallisce, lascia il contenuto statico già scritto nell'HTML
+    console.warn('Mantengo i dati statici: impossibile caricare quelli da Last.fm');
+    return;
+  }
+
+  fillMusicLists(stats);
+}
+
+document.addEventListener('DOMContentLoaded', initMusicSection);
