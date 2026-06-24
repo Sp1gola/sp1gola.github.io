@@ -6,7 +6,7 @@
 body {
     background: #23238c;
     background: linear-gradient(90deg, rgba(35, 35, 140, 1) 0%, rgba(107, 107, 232, 1) 50%, rgba(28, 135, 128, 1) 100%);
-    min-height: 300vh;
+    min-height: 1000vh;
 }
 
 body::-webkit-scrollbar {
@@ -78,6 +78,7 @@ body::-webkit-scrollbar {
 
 .section {
     position: fixed;
+    pointer-events: none;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) translateY(100px);
@@ -100,6 +101,7 @@ body::-webkit-scrollbar {
 .section.show {
     opacity: 1 !important;
     transform: translate(-50%, -50%) translateY(0) !important;
+    pointer-events: auto;
 }
 
 .ulprg {
