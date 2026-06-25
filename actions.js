@@ -6,7 +6,6 @@ const sport = document.querySelector(".sport");
 const music = document.querySelector(".music");
 const tv = document.querySelector(".tv");
 const future = document.querySelector(".future");
-const love = document.querySelector(".love");
 const end = document.querySelector(".end");
  
 window.addEventListener("scroll", () => {
@@ -17,13 +16,13 @@ window.addEventListener("scroll", () => {
     if (pct <= 1) {
         welcome.classList.remove("hidden");
         name.classList.remove("hidden");
+        future.classList.remove("hidden");
         desc.classList.remove("show");
         prg.classList.remove("show");
         sport.classList.remove("show");
         music.classList.remove("show");
         tv.classList.remove("show");
         future.classList.remove("show");
-        love.classList.remove("show");
         end.classList.remove("show");
     }
     else if (pct > 1 && pct <= 13) {
@@ -35,7 +34,6 @@ window.addEventListener("scroll", () => {
         music.classList.remove("show");
         tv.classList.remove("show");
         future.classList.remove("show");
-        love.classList.remove("show");
         end.classList.remove("show");
     }
     else if (pct > 13 && pct <= 26) {
@@ -45,7 +43,6 @@ window.addEventListener("scroll", () => {
         music.classList.remove("show");
         tv.classList.remove("show");
         future.classList.remove("show");
-        love.classList.remove("show");
         end.classList.remove("show");
     }
     else if (pct > 26 && pct <= 38) {
@@ -54,7 +51,6 @@ window.addEventListener("scroll", () => {
         music.classList.remove("show");
         tv.classList.remove("show");
         future.classList.remove("show");
-        love.classList.remove("show");
         end.classList.remove("show");
     }
     else if (pct > 38 && pct <= 51) {
@@ -62,29 +58,23 @@ window.addEventListener("scroll", () => {
         music.classList.add("show");
         tv.classList.remove("show");
         future.classList.remove("show");
-        love.classList.remove("show");
         end.classList.remove("show");
     }
     else if (pct > 51 && pct <= 63) {
         music.classList.remove("show");
         tv.classList.add("show");
         future.classList.remove("show");
-        love.classList.remove("show");
         end.classList.remove("show");
     }
     else if (pct > 63 && pct <= 75) {
         tv.classList.remove("show");
+        future.classList.remove("hidden");
         future.classList.add("show");
-        love.classList.remove("show");
         end.classList.remove("show");
     }
-    else if (pct > 75 && pct <= 88) {
+    else if (pct > 75) {
         future.classList.remove("show");
-        love.classList.add("show");
-        end.classList.remove("show");
-    }
-    else if (pct > 88) {
-        love.classList.remove("show");
+        future.classList.add("hidden");
         end.classList.add("show");
     }
 });
