@@ -66,12 +66,9 @@ window.addEventListener("scroll", () => {
 
 //api call
 
-const LASTFM_BACKEND_URL = 'https://project-gt3cb.vercel.app';
-const LASTFM_USERNAME = 'sp1gola'; 
-
 async function getTopStats(username) {
   try {
-    const response = await fetch(`${LASTFM_BACKEND_URL}/api/top-stats?user=${username}`);
+    const response = await fetch(`https://project-gt3cb.vercel.app/api/top-stats.js?user=${username}`);
     if (!response.ok) throw new Error('Errore nella risposta del backend');
     return await response.json();
   } catch (error) {
@@ -99,7 +96,7 @@ function fillMusicLists(stats) {
 }
 
 async function initMusicSection() {
-  const stats = await getTopStats(LASTFM_USERNAME);
+  const stats = await getTopStats('sp1gola');
 
   if (!stats) {
     // Se la chiamata fallisce, lascia il contenuto statico già scritto nell'HTML
