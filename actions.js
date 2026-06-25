@@ -87,11 +87,11 @@ function fillMusicLists(stats) {
   `).join('');
 
   albumsList.innerHTML = stats.albums.map((a) => `
-    <li><a href="${a.url}" target="_blank" rel="noopener">${a.name}</a> <span class="music-artist">– ${a.artist}</span></li>
+    <li><a href="${a.url}" target="_blank" rel="noopener">${a.name}</a></li>
   `).join('');
 
   songsList.innerHTML = stats.tracks.map((t) => `
-    <li><a href="${t.url}" target="_blank" rel="noopener">${t.name}</a> <span class="music-artist">– ${t.artist}</span></li>
+    <li><a href="${t.url}" target="_blank" rel="noopener">${t.name}</a></li>
   `).join('');
 }
 
