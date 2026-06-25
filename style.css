@@ -60,6 +60,7 @@ body::-webkit-scrollbar {
     list-style: none;
 }
 
+.music a,
 .music-container a,
 .music-container a:visited,
 .icons a,
@@ -194,6 +195,11 @@ body::-webkit-scrollbar {
 
 .desc .img {
     padding-bottom: 5px;
+}
+
+.text{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .love {
